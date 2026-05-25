@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Karla Castro | Arquitetura & Urbanismo — Design Feminino e Contemporâneo</title>
+    <!-- Google Fonts (feminino + moderno) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFFFE1;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2c241a;
+            overflow-x: hidden;
+        }
+
+        /* Cores da paleta */
+        :root {
+            --rose: #FA8CB1;
+            --rose-light: #FDC5C9;
+            --cream: #FFFFE1;
+            --beige: #CFB699;
+            --terracota: #9E6D4E;
+            --shadow-soft: 0 20px 35px -12px rgba(158, 109, 78, 0.12);
+            --shadow-hover: 0 25px 40px -14px rgba(158, 109, 78, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* Scroll suave e estilo */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* header mais clean e feminino */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 225, 0.88);
+            backdrop-filter: blur(14px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(207, 182, 153, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #9E6D4E 0%, #FA8CB1 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo p {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #9E6D4E;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #6a4e38;
+            transition: 0.2s;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FA8CB1;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: #FA8CB1;
+        }
+
+        /* botões */
+        .btn-primary {
+            background: #9E6D4E;
+            color: #FFFFE1;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(158, 109, 78, 0.2);
+        }
+        .btn-primary:hover {
+            background: #FA8CB1;
+            color: #2c241a;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 24px rgba(250, 140, 177, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #9E6D4E;
+            color: #9E6D4E;
+            padding: 10px 28px;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-outline:hover {
+            background: rgba(250, 140, 177, 0.1);
+            border-color: #FA8CB1;
+            color: #9E6D4E;
+            transform: translateY(-2px);
+        }
+
+        /* hero com formas orgânicas */
+        .hero {
+            padding: 70px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(250,140,177,0.12) 0%, rgba(253,197,201,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-badge {
+            background: #FDC5C9;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 80px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #9E6D4E;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #9E6D4E;
+            margin-bottom: 16px;
+        }
+        .hero-content .highlight {
+            background: linear-gradient(120deg, #FDC5C9 0%, #FDC5C9 40%, transparent 60%);
+            padding: 0 8px;
+            display: inline-block;
+        }
+        .cau-info {
+            font-size: 0.9rem;
+            color: #b28b6f;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 25px 0 20px;
+            border-left: 3px solid #FA8CB1;
+            padding-left: 20px;
+            color: #3e3228;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+        .hero-deco {
+            flex: 0.9;
+            background: rgba(207,182,153,0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 48% 52% 38% 62% / 56% 44% 56% 44%;
+            padding: 40px 25px;
+            text-align: center;
+            transition: all 0.4s;
+        }
+        .hero-deco i {
+            font-size: 68px;
+            color: #FA8CB1;
+            opacity: 0.8;
+        }
+
+        /* titles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: #9E6D4E;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+        .section-sub {
+            color: #7a624c;
+            margin-bottom: 48px;
+            font-weight: 400;
+            font-size: 1rem;
+            max-width: 580px;
+        }
+
+        /* cards serviço estilo moderno e delicado */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+            margin: 40px 0 20px;
+        }
+        .service-card {
+            background: rgba(255, 255, 225, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 36px;
+            padding: 28px 20px;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(207,182,153,0.4);
+            box-shadow: var(--shadow-soft);
+        }
+        .service-card i {
+            font-size: 2.3rem;
+            background: linear-gradient(145deg, #FA8CB1, #FDC5C9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 18px;
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #9E6D4E;
+        }
+        .service-card p {
+            color: #5b4a3a;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #FA8CB1;
+            background: #FFFFE1;
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* categorias detalhadas com toque feminino */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+            margin: 48px 0;
+        }
+        .cat-card {
+            background: #ffffffd9;
+            border-radius: 32px;
+            padding: 24px 28px;
+            transition: all 0.25s;
+            border: 1px solid #FDC5C9;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+        }
+        .cat-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #9E6D4E;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cat-card h4 i {
+            font-size: 1.6rem;
+            color: #FA8CB1;
+        }
+        .cat-card ul {
+            list-style: none;
+        }
+        .cat-card li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 10px;
+            align-items: baseline;
+        }
+        .cat-card li i {
+            color: #FA8CB1;
+            font-size: 0.7rem;
+        }
+
+        /* portfólio grid elegante */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+            margin: 50px 0;
+        }
+        .portfolio-item {
+            border-radius: 32px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 18px 28px -12px rgba(0,0,0,0.12);
+            transition: all 0.4s;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.08);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(250,140,177,0.7), rgba(158,109,78,0.8));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: 0.3s;
+            color: white;
+            font-weight: 500;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* contato com toque suave */
+        .contact-section {
+            background: linear-gradient(125deg, #FDC5C9 0%, #FFE0E4 100%);
+            border-radius: 64px;
+            padding: 56px 48px;
+            margin: 60px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            box-shadow: 0 20px 35px -8px rgba(158, 109, 78, 0.2);
+        }
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #9E6D4E;
+            margin-bottom: 24px;
+        }
+        .contact-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .contact-item i {
+            width: 44px;
+            height: 44px;
+            background: #FFFFE1;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #FA8CB1;
+            font-size: 1.2rem;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border-radius: 60px;
+            padding: 12px 30px;
+            display: inline-flex;
+            gap: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 24px;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+        }
+        .card-highlight {
+            background: #FFFFE1;
+            border-radius: 48px;
+            padding: 32px 28px;
+            text-align: center;
+            min-width: 240px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 32px 20px;
+            border-top: 1px solid #CFB69940;
+            color: #b48c70;
+            font-size: 0.8rem;
+        }
+
+        /* modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(44, 36, 26, 0.95);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            max-width: 85vw;
+            max-height: 85vh;
+            border-radius: 36px;
+            box-shadow: 0 30px 40px rgba(0,0,0,0.3);
+        }
+        .modal-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 40px;
+            color: #FDC5C9;
+            cursor: pointer;
+        }
+
+        @media (max-width: 800px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .section-title { font-size: 1.8rem; }
+            .contact-section { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>Karla Castro</h1>
+            <p>Arquitetura • Urbanismo • Segurança</p>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero feminino e moderno -->
+    <section id="home">
+        <div class="container hero">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fas fa-feather-alt"></i> Assinatura sensível & técnica</span>
+                    <h1>O espaço que você <span class="highlight">sonha</span><br> começa aqui.</h1>
+                    <div class="cau-info"><i class="fas fa-id-card"></i> CAU A312986-1 | Engenheira de Segurança do Trabalho</div>
+                    <p class="tagline">Projetos que unem estética, afeto e funcionalidade — residenciais, comerciais e consultoria completa.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/5592999095704?text=Olá%20Karla!%20Adorei%20seu%20trabalho%20e%20gostaria%20de%20saber%20mais." target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> ME CHAMA NO WHATSAPP</a>
+                        <a href="#portfolio" class="btn-outline">Explorar criações →</a>
+                    </div>
+                </div>
+                <div class="hero-deco">
+                    <i class="fas fa-dove"></i>
+                    <p style="margin-top: 20px; font-weight: 500;">Atendimento presencial e online<br>Feito sob medida para você</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços principais + cards delicados -->
+    <section id="servicos">
+        <div class="container">
+            <h2 class="section-title">Serviços com alma</h2>
+            <p class="section-sub">Tudo o que seu espaço merece, em um só lugar — da ideia à realização com cuidado técnico.</p>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-home"></i><h3>Projeto arquitetônico</h3><p>Residencial, comercial, interiores e reformas expressivas.</p></div>
+                <div class="service-card"><i class="fas fa-chart-simple"></i><h3>Avaliação de imóvel</h3><p>Análise precisa e valorização patrimonial.</p></div>
+                <div class="service-card"><i class="fas fa-scroll"></i><h3>História do Imóvel</h3><p>Levantamento documental e memória construtiva.</p></div>
+                <div class="service-card"><i class="fas fa-map"></i><h3>Desmembramento</h3><p>Regularização fundiária com segurança.</p></div>
+                <div class="service-card"><i class="fas fa-check-double"></i><h3>Regularização</h3><p>Aprovações, licenças e conformidade.</p></div>
+                <div class="service-card"><i class="fas fa-brush"></i><h3>Reforma & adaptação</h3><p>Renove com estilo e eficiência.</p></div>
+                <div class="service-card"><i class="fas fa-leaf"></i><h3>Consultoria Técnica</h3><p>Viabilidade, otimização e design estratégico.</p></div>
+                <div class="service-card"><i class="fas fa-flower"></i><h3>Interiores + Paisagismo</h3><p>Ambientes que acolhem e inspiram.</p></div>
+            </div>
+
+            <!-- detalhamento completo (feminino e informativo) -->
+            <div style="margin-top: 70px;">
+                <h2 class="section-title">Especialidades que encantam</h2>
+                <p class="section-sub">Da fachada moderna aos detalhes sensoriais — cada projeto é único.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="cat-card"><h4><i class="fas fa-store"></i> Comercial</h4><ul><li><i class="fas fa-circle"></i> Escritórios, Lojas, Restaurantes</li><li><i class="fas fa-circle"></i> Cafés, Consultórios, Clínicas</li><li><i class="fas fa-circle"></i> Coworkings, Hotéis e Pousadas</li></ul></div>
+                <div class="cat-card"><h4><i class="fas fa-couch"></i> Residencial & Reformas</h4><ul><li><i class="fas fa-circle"></i> Casas e apartamentos completos</li><li><i class="fas fa-circle"></i> Reformas integrais e parciais</li><li><i class="fas fa-circle"></i> Modernização de fachadas</li></ul></div>
+                <div class="cat-card"><h4><i class="fas fa-church"></i> Institucionais</h4><ul><li><i class="fas fa-circle"></i> Templos, escolas, clínicas</li><li><i class="fas fa-circle"></i> Ambientes seguros e acessíveis</li><li><i class="fas fa-circle"></i> Planejamento humanizado</li></ul></div>
+                <div class="cat-card"><h4><i class="fas fa-cube"></i> Visualização 3D</h4><ul><li><i class="fas fa-circle"></i> Maquetes eletrônicas realistas</li><li><i class="fas fa-circle"></i> Plantas humanizadas e renders</li><li><i class="fas fa-circle"></i> Tour virtual imersivo</li></ul></div>
+                <div class="cat-card"><h4><i class="fas fa-chalkboard"></i> Planejamento & consultoria</h4><ul><li><i class="fas fa-circle"></i> Estudos de viabilidade</li><li><i class="fas fa-circle"></i> Otimização de espaços</li><li><i class="fas fa-circle"></i> Design orientado por dados</li></ul></div>
+                <div class="cat-card"><h4><i class="fas fa-shield-heart"></i> Análises Técnicas</h4><ul><li><i class="fas fa-circle"></i> Laudos e inspeções prediais</li><li><i class="fas fa-circle"></i> Ergonomia e prevenção</li><li><i class="fas fa-circle"></i> Engenharia de segurança do trabalho</li></ul></div>
+                <div class="cat-card"><h4><i class="fas fa-feather"></i> Complementos exclusivos</h4><ul><li><i class="fas fa-circle"></i> Paisagismo e design biofílico</li><li><i class="fas fa-circle"></i> Móveis sob medida</li><li><i class="fas fa-circle"></i> Iluminação arquitetônica</li><li><i class="fas fa-circle"></i> Ambientação de fachadas e áreas externas</li></ul></div>
+            </div>
+            <p style="text-align: center; margin-top: 10px; font-weight: 500; color: #9E6D4E;"><i class="fas fa-heart" style="color:#FA8CB1;"></i> Projetos com propósito, elegância e segurança</p>
+        </div>
+    </section>
+
+    <!-- Portfólio com imagens img01.jpg a img10.jpg -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Nosso olhar em cada detalhe</h2>
+            <p class="section-sub">Clique nas imagens para expandir e sentir a atmosfera de cada criação.</p>
+            <div class="portfolio-grid" id="portfolioGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contato e diferenciais (feminino e acolhedor) -->
+    <section id="contato">
+        <div class="container contact-section">
+            <div class="contact-info">
+                <h3><i class="fas fa-pen-fancy"></i> Vamos dar vida ao seu espaço?</h3>
+                <div class="contact-detail">
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>(92) 99909-5704</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> <span>KARLACASTROARQ@GMAIL.COM</span></div>
+                    <div class="contact-item"><i class="fab fa-whatsapp"></i> <span>WhatsApp: (92) 99909-5704</span></div>
+                    <div class="contact-item"><i class="fas fa-globe-americas"></i> <span>Atendimento presencial e online — em todo Brasil</span></div>
+                </div>
+                <a href="https://wa.me/5592999095704?text=Olá%20Karla!%20Quero%20criar%20um%20projeto%20incrível%20com%20você." target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Iniciar conversa no WhatsApp</a>
+                <p style="margin-top: 24px; font-size: 0.85rem;"><i class="fas fa-star"></i> Consultoria completa + Regularização + Design emocional.</p>
+            </div>
+            <div class="card-highlight">
+                <i class="fas fa-crown" style="font-size: 42px; color: #FA8CB1;"></i>
+                <h4 style="margin: 16px 0 8px; color:#9E6D4E;">Arquiteta + Engenheira de Segurança</h4>
+                <p style="font-size: 0.85rem;">União entre criatividade e técnica para ambientes seguros, belos e funcionais.</p>
+                <div style="margin-top: 18px;"><i class="fas fa-certificate" style="color:#FA8CB1;"></i> <strong>CAU A312986-1</strong></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Karla Castro | Arquitetura, Urbanismo e Segurança do Trabalho — Transformando espaços com sensibilidade e excelência.</p>
+        <p style="margin-top: 8px;"><i class="fas fa-camera"></i> Portfolio com imagens autorais (img01.jpg a img10.jpg).</p>
+    </div>
+</footer>
+
+<!-- Modal lightbox -->
+<div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+    // Carregar portfolio com img01.jpg até img10.jpg (raiz)
+    const portfolioContainer = document.getElementById('portfolioGrid');
+    for (let i = 1; i <= 10; i++) {
+        const num = i.toString().padStart(2, '0');
+        const imgSrc = `img${num}.jpg`;
+        const div = document.createElement('div');
+        div.className = 'portfolio-item';
+        div.innerHTML = `
+            <img src="${imgSrc}" alt="Projeto assinado Karla Castro - ${i}" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/600x450/CFB699/FFFFE1?text=Karla+Castro+${i}'">
+            <div class="portfolio-overlay">Projeto • ${i} <i class="fas fa-arrow-right"></i></div>
+        `;
+        div.addEventListener('click', (src => () => openModal(src))(imgSrc));
+        portfolioContainer.appendChild(div);
+    }
+
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.querySelector('.modal-close');
+    function openModal(src) {
+        modal.style.display = 'flex';
+        modalImg.src = src;
+        modalImg.onerror = () => { modalImg.src = 'https://placehold.co/1200x800/CFB699/FFFFE1?text=Imagem+em+construção'; };
+    }
+    closeModal.onclick = () => modal.style.display = 'none';
+    modal.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
+
+    // smooth scroll interno
+    document.querySelectorAll('.nav-links a, .hero-buttons a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href && href.startsWith("#") && href !== "#") {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
